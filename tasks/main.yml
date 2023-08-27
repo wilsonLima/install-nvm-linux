@@ -1,0 +1,28 @@
+---
+
+
+- name: Incluindo tarefas especificas para o SO
+  include_tasks: "{{ item }}"
+  with_first_found:
+   - "{{ ansible_distribution | lower }}.yml"
+   - "{{ ansible_os_family | lower }}.yml"
+   - "os_defaults.yml"
+  tags: 
+   - main
+
+
+- name: "Baixando o Script de Instalacao do NVM versão {{ nvm_version }}"
+  when: nvm_unsupported_os is not defined
+  get_url:
+   url: "{{ url_nvm_download }}"
+   dest: "{{ nvm_dest }}"
+   mode: 0755
+  tags:
+   - nvm
+
+
+- name: "Executando o Script de Instalacao do NVM versão {{ nvm_version }}"
+  when: nvm_unsupported_os is not defined
+  shell: "{{ nvm_dest }}"
+  tags:
+   - nvm

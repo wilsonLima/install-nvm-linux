@@ -1,0 +1,11 @@
+---
+
+
+- name: "Instalando dependências para o NVM"
+  apt:
+    name: "{{ debian_nvm_deps }}"
+    state: present
+  become: true
+  tags:
+    - deps
+    - nvm

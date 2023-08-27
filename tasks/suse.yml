@@ -1,0 +1,11 @@
+---
+
+
+- name: "Instalando dependências para o NVM"
+  zypper:
+    name: "{{ suse_nvm_deps }}"
+    state: present
+  become: true
+  tags:
+    - deps
+    - nvm

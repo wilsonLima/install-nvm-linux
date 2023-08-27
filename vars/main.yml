@@ -1,0 +1,22 @@
+---
+
+
+url_nvm_download: "https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh"
+nvm_dest: "/tmp/nvm-{{ nvm_version }}-install.sh"
+
+
+debian_nvm_deps:
+  - build-essential 
+  - libssl-dev 
+  - curl 
+  - git-core
+
+
+fedora_nvm_deps:
+  - curl 
+  - git
+
+
+suse_nvm_deps:
+  - curl 
+  - git
