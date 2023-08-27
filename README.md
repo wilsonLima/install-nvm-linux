@@ -8,6 +8,8 @@ Distribuições Suportadas pela Role
 
 - Fedora 37 ou superior
 - Linux Mint 21 ou superior
+- openSUSE Leap 15.4 ou superior
+- openSUSE Tumbleweed
 - Ubuntu 22.10 ou superior
 
 
